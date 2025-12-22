@@ -1,0 +1,15 @@
+<style>.tb{display:inline-block;margin:auto;padding:0.55em;font-size:1.2em;font-family:d2coding;resize:none;}h2{font-family:d2coding;}div{display:inline;}.nw{width:100em;width:100ch;height:120%;display:table;font-size:1.2em;font-family:d2coding;resize:none;word-break:break-all;}input,textarea{font-family:d2coding;width:100em;width:100ch;}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<body style='width:95%;height:100%;'>
+<h2 class="ls">Encoder2</h2>
+<textarea class="tb"id="er"rows="8"cols="96"placeholder="last=top"></textarea>
+<input class="tb"id="ph"placeholder="placeholder"size=93>
+<input class="tb"id="re"placeholder="key"size=85><button class="tb"onclick="sen()">Encode</button>
+<textarea class="tb"id="bs"rows="8"cols="96"placeholder="fin b64 enc"></textarea>
+<a href="" id=9 target=_blank class="nw"></a>
+<script>
+function ge(a){return document.getElementById(a)}
+function ab(a){return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(a))}
+function sen(){var k1=CryptoJS.SHA256(ge("re").value),nn=CryptoJS.SHA224(ge("re").value)+CryptoJS.AES.encrypt(ge("er").value.replace(/\r\n|\r|\n/g,"<br>"),k1,{mode:CryptoJS.mode.ECB}),ld=ge("ph").value;ge("er").value='\<input onkeyup=\"ku(this.id);\" placeholder=\"'+ld+'\" id=\"'+nn+'\"\>';ge(9).href='https://yln2.github.io/?'+ab(ge("er").value);ge(9).innerHTML=ge(9).href;ge("bs").value=ab(ge("bs").value)}
+</script>
+</body>
